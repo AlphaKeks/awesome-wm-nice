@@ -954,8 +954,8 @@ function nice.initialize(args)
                 c._nice_base_color = _private.titlebar_color
                 _private.add_window_decorations(c)
                 -- Connect a signal to determine the client color and then re-decorate it
-                c:connect_signal(
-                    "request::activate", c._cb_add_window_decorations)
+                -- c:connect_signal(
+                --     "request::activate", c._cb_add_window_decorations)
             end
             -- Shape the client
             c.shape = shapes.rounded_rect {
