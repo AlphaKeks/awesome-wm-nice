@@ -63,13 +63,13 @@ local pixbuf_get_from_window = gdk.pixbuf_get_from_window
 -- => nice
 -- ============================================================
 -- Colors
-local colors = require("nice.colors")
+local colors = require("plugins.nice.colors")
 local color_darken = colors.darken
 local color_lighten = colors.lighten
 local is_contrast_acceptable = colors.is_contrast_acceptable
 local relative_luminance = colors.relative_luminance
 -- Shapes
-local shapes = require("nice.shapes")
+local shapes = require("plugins.nice.shapes")
 local create_corner_top_left = shapes.create_corner_top_left
 local create_edge_left = shapes.create_edge_left
 local create_edge_top_middle = shapes.create_edge_top_middle
@@ -173,7 +173,7 @@ _private.sticky_color = "#f6a2ed"
 -- => Saving and loading of color rules
 -- ============================================================
 local table = table
-local t = require("nice.table")
+local t = require("plugins.nice.table")
 table.save = t.save
 table.load = t.load
 
@@ -945,7 +945,7 @@ function nice.initialize(args)
                 end -- _cb_add_window_decorations
             -- Check if a color rule already exists...
             local base_color = get_color_rule(c)
-            if base_color then
+            if false then
                 -- If so, use that color rule
                 c._nice_base_color = base_color
                 _private.add_window_decorations(c)
