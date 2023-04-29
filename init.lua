@@ -943,20 +943,10 @@ function nice.initialize(args)
                                 c._cb_add_window_decorations)
                         end)
                 end -- _cb_add_window_decorations
-            -- Check if a color rule already exists...
-            local base_color = get_color_rule(c)
-            if false then
-                -- If so, use that color rule
-                c._nice_base_color = base_color
-                _private.add_window_decorations(c)
-            else
-                -- Otherwise use the default titlebar temporarily
-                c._nice_base_color = _private.titlebar_color
-                _private.add_window_decorations(c)
-                -- Connect a signal to determine the client color and then re-decorate it
-                -- c:connect_signal(
-                --     "request::activate", c._cb_add_window_decorations)
-            end
+
+            c._nice_base_color = _private.titlebar_color
+            _private.add_window_decorations(c)
+
             -- Shape the client
             c.shape = shapes.rounded_rect {
                 tl = _private.titlebar_radius,
